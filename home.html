@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MARA — Curated Objects</title>
+  <link rel="stylesheet" href="home.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <!-- OVERLAY (mobile menu + cart backdrop) -->
+  <div class="overlay" id="overlay"></div>
+
+  <!-- MOBILE MENU DRAWER -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <div class="mobile-menu-header">
+      <span class="logo">MARA</span>
+      <button class="close-btn" id="closeMenu" aria-label="Close menu">✕</button>
+    </div>
+    <nav class="mobile-nav">
+      <a href="#">Shop</a>
+      <a href="#">Collections</a>
+      <a href="#">About</a>
+      <button class="mobile-cart-btn" id="mobileCartBtn">
+        Cart <span class="cart-count-mobile">0</span>
+      </button>
+    </nav>
+    <div class="mobile-menu-footer">
+      <p>Est. 2021 · Lagos, Nigeria</p>
+    </div>
+  </div>
+
+  <!-- CART DRAWER -->
+  <div class="cart-drawer" id="cartDrawer" aria-hidden="true">
+    <div class="cart-drawer-header">
+      <h3>Your Cart <span class="cart-drawer-count">(0)</span></h3>
+      <button class="close-btn" id="closeCart" aria-label="Close cart">✕</button>
+    </div>
+    <div class="cart-items" id="cartItems">
+      <div class="cart-empty" id="cartEmpty">
+        <span class="cart-empty-icon">✦</span>
+        <p>Your cart is empty.</p>
+        <button class="btn-outline cart-shop-link" id="cartShopLink">Start Shopping</button>
+      </div>
+    </div>
+    <div class="cart-footer" id="cartFooter">
+      <div class="cart-total">
+        <span>Total</span>
+        <span class="total-price" id="totalPrice">₦0</span>
+      </div>
+      <button class="btn-primary checkout-btn">Proceed to Checkout</button>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header id="siteHeader">
+    <div class="header-inner">
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav-left">
+        <a href="#">Shop</a>
+        <a href="#">Collections</a>
+      </nav>
+      <div class="logo">MARA</div>
+      <nav class="nav-right">
+        <a href="#">About</a>
+        <button class="cart-btn" id="cartBtn" aria-label="Open cart">
+          Cart <span class="cart-count">0</span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-text">
+      <p class="hero-label">New Arrivals — Spring 2026</p>
+      <h1>Objects<br/><em>worth keeping.</em></h1>
+      <p class="hero-sub">Thoughtfully sourced homeware, ceramics, and living essentials for the considered home.</p>
+      <a href="#products" class="btn-primary">Explore the Collection</a>
+    </div>
+    <div class="hero-image">
+      <div class="hero-img-placeholder">
+        <div class="img-inner"><span>✦</span></div>
+      </div>
+      <div class="hero-tag">Est. 2021 · Lagos</div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee-bar">
+    <div class="marquee-track">
+      <span>Free delivery over ₦50,000</span><span class="dot">·</span>
+      <span>Handpicked, curated weekly</span><span class="dot">·</span>
+      <span>Sustainably sourced</span><span class="dot">·</span>
+      <span>30-day returns</span><span class="dot">·</span>
+      <span>Free delivery over ₦50,000</span><span class="dot">·</span>
+      <span>Handpicked, curated weekly</span><span class="dot">·</span>
+      <span>Sustainably sourced</span><span class="dot">·</span>
+      <span>30-day returns</span><span class="dot">·</span>
+    </div>
+  </div>
+
+  <!-- CATEGORIES -->
+  <section class="categories">
+    <div class="section-header">
+      <p class="label">Browse by</p>
+      <h2>Category</h2>
+    </div>
+    <div class="category-grid">
+      <div class="cat-card cat-large">
+        <div class="cat-bg cat-bg-1"></div>
+        <div class="cat-content"><span class="cat-count">24 pieces</span><h3>Ceramics</h3></div>
+      </div>
+      <div class="cat-card">
+        <div class="cat-bg cat-bg-2"></div>
+        <div class="cat-content"><span class="cat-count">18 pieces</span><h3>Textiles</h3></div>
+      </div>
+      <div class="cat-card">
+        <div class="cat-bg cat-bg-3"></div>
+        <div class="cat-content"><span class="cat-count">12 pieces</span><h3>Lighting</h3></div>
+      </div>
+      <div class="cat-card cat-wide">
+        <div class="cat-bg cat-bg-4"></div>
+        <div class="cat-content"><span class="cat-count">30 pieces</span><h3>Kitchen & Table</h3></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <section class="products" id="products">
+    <div class="section-header">
+      <p class="label">Featured</p>
+      <h2>New In</h2>
+    </div>
+    <div class="product-grid">
+
+      <div class="product-card" data-id="1" data-name="Wabi Stoneware Bowl" data-price="18500">
+        <div class="product-img">
+          <div class="product-img-placeholder p1"></div>
+          <button class="wishlist" aria-label="Wishlist">♡</button>
+          <span class="badge">New</span>
+        </div>
+        <div class="product-info">
+          <p class="product-cat">Ceramics</p>
+          <h4>Wabi Stoneware Bowl</h4>
+          <div class="product-bottom">
+            <span class="price">₦18,500</span>
+            <button class="add-to-cart">Add to cart</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card" data-id="2" data-name="Linen Throw — Ivory" data-price="24000">
+        <div class="product-img">
+          <div class="product-img-placeholder p2"></div>
+          <button class="wishlist" aria-label="Wishlist">♡</button>
+          <span class="badge badge-sale">Sale</span>
+        </div>
+        <div class="product-info">
+          <p class="product-cat">Textiles</p>
+          <h4>Linen Throw — Ivory</h4>
+          <div class="product-bottom">
+            <span class="price">₦24,000 <s>₦32,000</s></span>
+            <button class="add-to-cart">Add to cart</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card" data-id="3" data-name="Rattan Pendant Light" data-price="67000">
+        <div class="product-img">
+          <div class="product-img-placeholder p3"></div>
+          <button class="wishlist" aria-label="Wishlist">♡</button>
+        </div>
+        <div class="product-info">
+          <p class="product-cat">Lighting</p>
+          <h4>Rattan Pendant Light</h4>
+          <div class="product-bottom">
+            <span class="price">₦67,000</span>
+            <button class="add-to-cart">Add to cart</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card" data-id="4" data-name="Handthrown Mug Set ×2" data-price="12800">
+        <div class="product-img">
+          <div class="product-img-placeholder p4"></div>
+          <button class="wishlist" aria-label="Wishlist">♡</button>
+          <span class="badge">New</span>
+        </div>
+        <div class="product-info">
+          <p class="product-cat">Kitchen & Table</p>
+          <h4>Handthrown Mug Set ×2</h4>
+          <div class="product-bottom">
+            <span class="price">₦12,800</span>
+            <button class="add-to-cart">Add to cart</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card" data-id="5" data-name="Terracotta Vase, Tall" data-price="29500">
+        <div class="product-img">
+          <div class="product-img-placeholder p5"></div>
+          <button class="wishlist" aria-label="Wishlist">♡</button>
+        </div>
+        <div class="product-info">
+          <p class="product-cat">Ceramics</p>
+          <h4>Terracotta Vase, Tall</h4>
+          <div class="product-bottom">
+            <span class="price">₦29,500</span>
+            <button class="add-to-cart">Add to cart</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="product-card" data-id="6" data-name="Olive Wood Serving Board" data-price="21000">
+        <div class="product-img">
+          <div class="product-img-placeholder p6"></div>
+          <button class="wishlist" aria-label="Wishlist">♡</button>
+          <span class="badge">Low Stock</span>
+        </div>
+        <div class="product-info">
+          <p class="product-cat">Kitchen & Table</p>
+          <h4>Olive Wood Serving Board</h4>
+          <div class="product-bottom">
+            <span class="price">₦21,000</span>
+            <button class="add-to-cart">Add to cart</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="load-more">
+      <button class="btn-outline">View All Products →</button>
+    </div>
+  </section>
+
+  <!-- BANNER -->
+  <section class="banner">
+    <div class="banner-inner">
+      <p class="label">The MARA Edit</p>
+      <h2>"Fewer, better things.<br/>Chosen with care."</h2>
+      <p>Every object in our store is selected by hand. We believe your home should tell your story — slowly, beautifully.</p>
+      <a href="#" class="btn-primary btn-light">Read our Story</a>
+    </div>
+  </section>
+
+  <!-- TOAST NOTIFICATION -->
+  <div class="toast" id="toast" role="status" aria-live="polite">
+    <span class="toast-icon">✓</span>
+    <span class="toast-msg" id="toastMsg">Added to cart</span>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">MARA</div>
+        <p>Curated objects for the considered home. Shipped from Lagos to everywhere.</p>
+      </div>
+      <div class="footer-links">
+        <h5>Shop</h5>
+        <a href="#">New Arrivals</a>
+        <a href="#">Ceramics</a>
+        <a href="#">Textiles</a>
+        <a href="#">Lighting</a>
+      </div>
+      <div class="footer-links">
+        <h5>Help</h5>
+        <a href="#">Shipping & Returns</a>
+        <a href="#">FAQ</a>
+        <a href="#">Contact Us</a>
+        <a href="#">Track Order</a>
+      </div>
+      <div class="footer-links">
+        <h5>Follow</h5>
+        <a href="#">Instagram</a>
+        <a href="#">Pinterest</a>
+        <a href="#">Newsletter</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 MARA. All rights reserved.</p>
+      <p>Made with care in Lagos, Nigeria.</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
